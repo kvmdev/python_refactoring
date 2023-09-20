@@ -48,3 +48,5 @@ def ask():
                 break
             else:
                 print( 'Please enter from 1 to 3' )
+
+ask()
