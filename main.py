@@ -33,7 +33,7 @@ while True:
           print( read_file.read() )
           read_file.close()
         elif num == 3:
-          print( 'Will end' )
+          print( 'Will end ' )
           break  # 繰り返す処理を終了させる構文
         else:
             print( 'Please enter from 1 to 3' )
