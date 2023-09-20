@@ -1,15 +1,14 @@
-while True:
-    print( 'Please select the process you want to perform' )
-    print( '1: Enter rating points and comments' )
-    print( '2:Check the results so far' )
-    print( '3:Finish' )
-    num = input()
+def forThird():
+    print( 'Will end' )
 
-    if num.isdecimal():
-        num = int(num)
+def forSecond():
+    print( 'Results so far' )
+    read_file = open("data.txt", "r")
+    print( read_file.read() )
+    read_file.close()
 
-        if num == 1:
-            while True:
+def forFirst():
+    while True:
                 print( 'Please enter your rating from 1 to 5' )
                 point = input()
                 if point.isdecimal():
@@ -27,15 +26,25 @@ while True:
                         break
                 else:
                     print( 'Please enter the evaluation points in numbers.' )
-        elif num == 2:
-          print( 'Results so far' )
-          read_file = open("data.txt", "r")
-          print( read_file.read() )
-          read_file.close()
-        elif num == 3:
-          print( 'Will end ' )
-          break  # 繰り返す処理を終了させる構文
-        else:
-            print( 'Please enter from 1 to 3' )
-    else:
-        print( 'Please enter from 1 to 3' )
+
+def ask():
+    while True:
+        print( 'Please select the process you want to perform' )
+        print( '1: Enter rating points and comments' )
+        print( '2: Check the results so far' )
+        print( '3: Finish' )
+
+        num = input('Enter a number from 1 to 3: ')
+
+        if num.isdecimal():
+            num = int(num)
+
+            if num == 1:
+                forFirst()
+            if num == 2:
+                forSecond()
+            if num == 3:
+                forThird()
+                break
+            else:
+                print( 'Please enter from 1 to 3' )
